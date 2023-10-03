@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Program 5</title>  
+    <link href="stylengpages.css" rel="stylesheet"/>
+</head>
+<body>
+    <h1> ACCEPT 5 NUMBERS </h1>
+    <div class="P5">
+    <b><label for="Num1">1st Number :</label></b>
+    <input type="number" id="num1" onfocus="this.value=''" ><br>
+
+    <b><label for="Num1">2nd Number :</label></b>
+    <input type="number" id="num2" onfocus="this.value=''" ><br>
+
+    <b><label for="Num1">3rd Number :</label></b>
+    <input type="number" id="num3" onfocus="this.value=''" ><br>
+
+    <b><label for="Num1">4th Number :</label></b>
+    <input type="number" id="num4" onfocus="this.value=''" ><br>
+
+    <b><label for="Num1">5th Number :</label></b>
+    <input type="number" id="num5" onfocus="this.value=''" ><br/><br/>
+
+    <button onclick="Fivenums()">Check & Compute</button><br/><br>
+    <h1>Remark: <span id="result">-</span></h1><br>
+    <button onclick="ClearFields()">CLEAR</button><br/><br/>
+    <a href="index.html"><button>Back To Homepage</button></a>
+    </div>
+    <script>
+        function Fivenums()
+        {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+	        var num3 = parseFloat(document.getElementById('num3').value);
+	        var num4 = parseFloat(document.getElementById('num4').value);
+	        var num5 = parseFloat(document.getElementById('num5').value);
+
+  	        if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                alert("Please enter valid number.");
+                return;
+   	        }
+
+	        if (num3>num1){
+	            var prod = num1 * num2 * num3 * num4 * num5;
+                document.getElementById('result').style.color = "Brown";
+	            document.getElementById('result').innerHTML = prod;
+	        }
+
+	        else if (num1>num2){
+	            var prod = num4 * num5;
+                document.getElementById('result').style.color = "Yellow";
+	            document.getElementById('result').innerHTML = prod;
+	        }
+
+	        else {
+	            document.getElementById('result').style.color = "red";
+	            document.getElementById('result').innerHTML = "BYE";
+	        }
+        }
+
+        function ClearFields() {
+
+            document.getElementById("result").innerHTML = "-";
+            document.getElementById('result').style.color = "gold";
+        }
+    </script>
+</body>
+</html>

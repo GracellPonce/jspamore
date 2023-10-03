@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Program 3</title>  
+    <link href="stylengpages.css" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Comparing Two Numbers</h1>
+    <div class="P3">
+    <b><label for="Num1">ENTER FIRST : </label></b>
+    <input type="number" id="num1" onfocus="this.value=''"><br><br>
+
+    <b><label for="Num1">ENTER SECOND: </label></b>
+    <input type="number" id="num2" onfocus="this.value=''"><br><br>
+
+    <button onclick="Comparing()">COMPARE</button><br><br>
+    <h1 id="result"> RESULT </h1><br>
+    <button onclick="ClearFields()">CLEAR</button><br/><br/>
+    <a href="index.html"><button>Back To Homepage</button></a>
+    </div>
+    <script>
+        function Comparing()
+        {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid number.");
+                return;
+   	        }
+            if (num1 > num2) {
+                document.getElementById('result').textContent = 'First is GREATER THAN the Second.';
+                document.getElementById('result').style.color = "BLUE";
+            } 
+            else if  (num1 < num2) {
+		        document.getElementById('result').textContent = 'First is LESS THAN the Second.';
+                document.getElementById('result').style.color = "RED";            
+            }
+	        else {
+                document.getElementById('result').textContent = 'First is EQUIVALENT to the Second.';
+	            document.getElementById('result').style.color = "GOLD";
+	        }   
+        }
+
+        function ClearFields() {
+
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("result").innerHTML = "RESULT";
+            document.getElementById('result').style.color = "BLACK";
+
+
+        }   
+    </script>
+</body>
+</html>
